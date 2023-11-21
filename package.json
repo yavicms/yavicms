@@ -1,7 +1,7 @@
 {
   "name": "yavicms",
   "version": "1.0.0",
-  "description": "Yavi - CMS for NodeJS",
+  "description": "Hoàng Sa, Trường Sa, và tôi, là của Việt Nam.",
   "main": "index.js",
   "scripts": {
     "dev": "node --trace-warnings index.js",
