@@ -1,0 +1,17 @@
+{
+  "name": "yavicms",
+  "version": "1.0.0",
+  "description": "Yavi - CMS for NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --trace-warnings index.js",
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "forever": "forever start index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yavi": "^1.0.3"
+  }
+}

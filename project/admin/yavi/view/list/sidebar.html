@@ -1,0 +1,14 @@
+<ul class="sidebar-folder">
+    {{ var $css = []; }}
+    {{ for(var i = 0, n = list.length, row; i < n; i++){ 
+        row=list[i];
+        $css.push('.', row.slug, ' .sidebar-li > .slug' , row.slug, '{background-color: #fefefe;border-radius: 10px;}'); 
+    }}
+    <li class="sidebar-li">
+        <a href="{{ row.url }}" class="spa in-sidebar notifications slug{{ row.slug }}" data-count="0" data-icon="{{ row.icon }}">
+            {{ row.title }}
+        </a>
+    </li>
+    {{ } }}
+</ul>
+<style>{{ $css.join("") }}</style>

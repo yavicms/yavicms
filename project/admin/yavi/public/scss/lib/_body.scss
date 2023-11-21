@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding:  0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.link {
+    color: #0074d9;
+}
+
+.empty:empty{
+    display: none;
+}
+
+.mp0 {
+    margin: 0;
+    padding: 0;
+}
+
+.w100 {
+    width: 100%;
+}
+.h100 {
+    height: 100%;
+}
+.t0 {
+    top: 0;
+}
+.l0 {
+    left: 0;
+}
+.r0 {
+    right: 0;
+}
+.b0 {
+    bottom: 0;
+}
+
+.relative, .center {
+    position: relative;
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.center > * {
+    position: absolute;
+    left: 50%;
+    width: max-content;
+
+    &:first-child {
+        transform: translate(-50%, 50%);
+    }
+    &:last-child {
+        transform: translate(-50%, 50%);
+    }
+}
+
+.absolute {
+    position: absolute;
+
+    &.full {
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+.fixed {
+    position: fixed;
+}
+
+img {
+    display: block;
+}
+
+.hover-show, .opacity {
+    display: none !important;
+}
+.relative > .opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 30%;
+}
+.hover:hover {
+    .opacity, .hover-show {
+        display: block !important;
+    }
+    .hover-show {
+        z-index: 2;
+        &.center {
+            display: flex !important;
+        }
+    }
+    .hover-hide {
+        display: none;
+    }
+}
+
+.text-r {
+    text-align: right;
+}
+.text-c {
+    text-align: center;
+}
+.text-l {
+    text-align: left;
+}
+
+.input, .textarea {
+    line-height: 1.5;
+    margin: 0;
+    padding: 0.3em 0.6em;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 0.2em;
+    transition: all .3s;
+    width: 100%;
+    cursor: auto;
+    
+    &:focus {
+        border: 1px solid #0074d9;
+        outline: 0;
+    }
+
+    &:empty::before {
+        content: attr(placeholder);
+        color: #888;
+    }
+}
+.textarea {
+    min-height: 5em;
+    max-height: 15em;
+    overflow: auto;
+}
+.input {
+    height: 2.1em;
+}
+
+.select {
+
+    position: relative;
+    
+    & > ul {
+
+        position: absolute;
+        top: 0.5em;
+        right: 0;
+        width: max-content;
+        border: 1px solid;
+        background-color: #fff;
+
+        & > li {
+            display: none;
+            list-style: none;
+            padding: 0.3em;
+            margin: 0;
+            border-top: 1px solid #ccc;
+            height: 1.7em;
+            line-height: 1.1;
+            font-size: 0.92em;
+
+            &:hover {
+                background-color: #fcfcfc;
+            }
+
+            &:first-child {
+                display: block;
+                border-top: 0;
+                position: relative;
+                padding-left: 1.5em;
+
+                &::before {
+                    content: "►";
+                    position: absolute;
+                    left: 0.5em;
+                    top: 0.52em;
+                    font-size: 0.8em;
+                }
+            }
+
+            & > .checkable {
+                &::after, &::before{
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    &:hover > ul > li {
+        display: block;
+
+        &:first-child::before{
+            content: "▼";
+        }
+    }
+}

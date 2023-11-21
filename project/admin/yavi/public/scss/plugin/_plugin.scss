@@ -1,0 +1,65 @@
+#plugin-link {
+    margin: 1em 0;
+
+    &> div {
+        display: inline-block;
+        font-size: 0.89em;
+
+        &:not(:last-child)::after {
+            content: "|";
+            color: black;
+            margin: 0 0.5em;
+        }
+
+        .plugin-count{
+            color: darkgray;
+            margin-left: 0.3em;
+        }
+    }
+}
+
+#plugin-form {
+
+tr > td {
+    & > div {
+    margin: 0.4em 0;
+    }
+
+    &:first-child{
+    padding: 0.3em 0.9em;
+    }
+}
+
+.active-true {
+    background-color: rgba(17,17,17,.05) !important;
+}
+
+.active-false {
+    background-color: #fff !important;
+    border-bottom: 1px solid #eee;
+}
+
+.plugin-description {
+    color: gray;
+}
+
+.plugin-action > div {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 0.9em;
+}
+
+.plugin-delete {
+    color: rosybrown;
+}
+
+.plugin-save{
+    position: absolute;
+    top: -0.23em;
+    right: 62px;
+    padding: 0px 10px;
+    width: 0;
+    height: 0;
+}
+
+}
