@@ -1,6 +1,5 @@
 const { socket, events } = require("./_info");
 const { loop } = Yavi;
-const plugin_action_link = socket.cms("plugin-action");
 
 const $doc = $(document);
 const modal_delete = Modal({
@@ -11,7 +10,7 @@ const modal_delete = Modal({
     ok() {
         let info = modal_delete.info;
 
-        if (info) socket.post(plugin_action_link, info);
+        if (info) socket.api("post", "plugin-action", info);
 
         modal_delete.hide();
         delete modal_delete.info;
@@ -25,21 +24,23 @@ function load_done() {
 };
 
 function plugin_active(label, message, type, active) {
-    socket.post(plugin_action_link, {
-        action: active ? "active" : "deactive",
-        name: label.parent(".plugin-info").findOne(".plugin-name").value,
-        type
-    }, load_done);
+
+    let data = { type };
+
+    data.action = active ? "active" : "deactive";
+    data.name = label.parent(".plugin-info").findOne(".plugin-name").value;
+
+    socket.api("post", "plugin-action", data).then(load_done);
 };
 
 const modal_action = {
-    active(label, form) {
+    active(label) {
         plugin_active(label, "Deactive", "plugin", true);
     },
-    deactive(label, form) {
+    deactive(label) {
         plugin_active(label, "Active", "plugin", false);
     },
-    delete(label, form) {
+    delete(label) {
         modal_delete.info = {
             action: "delete",
             type: "plugin",
@@ -55,7 +56,7 @@ const modal_action = {
             if (input.checked) name.push(input.value);
         });
 
-        socket.post(plugin_action_link, { action: "save", name }, load_done);
+        socket.api("post", "plugin-action", { action: "save", name }).then(load_done);
     }
 };
 
@@ -88,7 +89,7 @@ $doc.on("click", "button.theme-link", function () {
 
     switch (data.action) {
         case "active":
-            socket.post(plugin_action_link, data, load_done);
+            socket.post("plugin-action", data, load_done);
             break;
     }
 

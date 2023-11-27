@@ -1,0 +1,84 @@
+const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+
+    /**
+     *  Người đăng sản phẩm
+     */
+    user: { type: Number/** mongoose.Schema.Types.ObjectId **/, ref: 'User', index: true },
+    
+    /**
+     *  Trạng thái của sản phẩm
+     */
+    status: { type: String },
+    
+    /**
+     *  Lưu trữ dữ liệu để tìm kiếm:
+     *  title, description, content
+     *  { k: "title", v: "" }
+     *  { k: "description", v: "" }
+     */
+    search: [
+        {
+            k: String,
+            v: String
+        }
+    ],
+    
+    /** 
+     * 	giá sản phẩm
+     **/
+    price: { type: Number },
+    
+    /** 
+     * 	số lượng sản phẩm 
+     **/
+    quantity: { type: Number, default: 0 },
+    
+    /** 
+     * 	thư mục / nhóm / loại / ... sản phẩm
+     **/
+    category: { type: String/** mongoose.Schema.Types.ObjectId **/, ref: 'Category', index: true },
+
+    /** 
+     * 	hình ảnh / video ... sản phẩm
+     **/
+    files: [
+        {
+            type: String,
+            uri: String
+        }
+    ],
+
+    /**
+     * 	Thông Số Kỹ Thuật (specifications):
+     * 	Thông tin kỹ thuật như : trọng lượng, kích thước, v.v.
+     **/
+    attributes: [
+        {
+            k: { type: String },
+            v: { type: String },
+        },
+    ],
+        
+    /**
+     * 	Ngày Tạo (created_at):
+     * 	Ghi lại thời điểm tạo sản phẩm.
+     **/
+    created_at: { type: Date, default: Date.now },
+
+    /**
+     * 	Ngày Cập Nhật (updated_at):
+     * 	Ghi lại thời điểm cập nhật sản phẩm.
+     **/
+    updated_at: { type: Date, default: Date.now, index: true },
+});
+
+productSchema.index({ 
+    'attributes.k': 1, 
+    'attributes.v': 1 
+});
+
+const Product = mongoose.model('Product', productSchema);
+
+module.exports = Product;

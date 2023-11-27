@@ -1,0 +1,50 @@
+const UserModel = require("./model");
+
+module.exports = class User {
+
+    #$data = {
+        login: [],
+        search: [],
+        attributes: [],
+        name: {}
+    };
+
+    constructor(data) {
+        Object.assign(this, data);
+    }
+
+    addLogin(data) {
+        this.#$data.login.push(data);
+    }
+    addSearch(data) {
+        this.#$data.search.push(data);
+    }
+    addInfo(data) {
+        this.#$data.info.push(data);
+    }
+
+    set username(username) {
+
+        let data = { key: "username", value: username };
+
+        this.#$data.username = username;
+
+        this.addLogin(data);
+        this.addSearch(data);
+    }
+    set email(email) {
+
+        this.addLogin({ key: "username", value: email });
+    }
+    set name(object) {
+        this.#$data.name = object;
+        this.addSearch({ key: "name", value: [object.first, object.last].join(" ") });
+    }
+    set password(password) {
+        this.#$data.password = password;
+    }
+
+    save() {
+        return UserModel.create(this.#$data);
+    }
+}

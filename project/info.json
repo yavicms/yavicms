@@ -1,7 +1,7 @@
 {
 	"admin": "yavi",
 	"plugins": [
-		"new-post-video"
+		"admin-plugin"
 	],
 	"server": {
 		"host": "localhost",

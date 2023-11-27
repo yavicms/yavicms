@@ -1,0 +1,15 @@
+const { Schema, default: mongoose } = require("mongoose");
+const schema_design = require("./design");
+
+const postSchema = new Schema(schema_design, {
+    collection: "yavi_posts",
+    timestamps: true
+});
+
+postSchema.index({
+    "title": "text",
+    "description": "text",
+    "content": "text"
+});
+
+module.exports = postSchema;

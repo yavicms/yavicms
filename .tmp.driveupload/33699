@@ -1,0 +1,23 @@
+
+// Trước khi lưu, thiết lập giá trị cho user_id
+module.exports = function (next) {
+    const doc = this;
+    const promise = new Promise(function (success, error) {
+        if (!doc.user_id) {
+            // Nếu user_id chưa được đặt, sử dụng plugin để nhận giá trị tự động tăng
+            autoIncrement.plugin.getNextSequence('User', function (err, count) {
+                if (err) return error(err);
+                doc.user_id = count;
+                success();
+            });
+        } else {
+            success();
+        }
+    });
+    promise
+        .then(function () {
+            doc.login.push({ key: "id", value: "" + doc.user_id });
+            next();
+        })
+        .catch((err) => next(err));
+}
