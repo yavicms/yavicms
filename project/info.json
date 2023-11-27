@@ -1,31 +1,36 @@
 {
-	"admin": "yavi",
-	"plugins": [
-		"admin-plugin"
-	],
-	"server": {
-		"host": "localhost",
-		"port": 80
+	"public": {
+		"admin": "yavi",
+		"plugins": [
+			"admin-plugin",
+			"new-post-video"
+		],
+		"websocket": true,
+		"dev": true
 	},
-	"mongodb": {
-		"host": "127.0.0.1",
-		"port": 27017,
-		"database": "test",
-		"query": {
-			"directConnection": true,
-			"serverSelectionTimeoutMS": 2000,
-			"appName": "mongosh+1.10.6"
+	"private": {
+		"server": {
+			"host": "localhost",
+			"port": 80
 		},
-		"options": {
-			"useNewUrlParser": true,
-			"useUnifiedTopology": true
+		"mongodb": {
+			"host": "127.0.0.1",
+			"port": 27017,
+			"database": "test",
+			"query": {
+				"directConnection": true,
+				"serverSelectionTimeoutMS": 2000,
+				"appName": "mongosh+1.10.6"
+			},
+			"options": {
+				"useNewUrlParser": true,
+				"useUnifiedTopology": true
+			}
+		},
+		"redis": {
+			"port": 6379,
+			"host": "127.0.0.1",
+			"db": 0
 		}
-	},
-	"redis": {
-		"port": 6379,
-		"host": "127.0.0.1",
-		"db": 0
-	},
-	"websocket": true,
-	"dev": true
+	}
 }

@@ -10,8 +10,6 @@ module.exports = function (app) {
     const MethodGet = require("./app/mw/get");
     const MethodPost = require("./app/mw/post");
 
-    const SocketRouter = require("./app/mw/socket");
-
     /**
      * Phải login trước khi vào trang admin
      */
@@ -26,11 +24,6 @@ module.exports = function (app) {
      * 
      */
     // MethodPost(app);
-
-    /**
-     * Socket Router
-     */
-    SocketRouter(app);
 
     /**
      * 
