@@ -1,0 +1,42 @@
+.sidebar{
+
+    & > &-fixed{
+        height: 50px;
+        margin: 0;
+
+        &>div{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+
+            &> *{
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                padding: 0.8em 0;
+                display: block;
+            }
+        }
+    }
+
+    &-header,&-footer{
+        background-color: #dfdfdf;
+    }
+
+    &-header{
+        .notify{
+            &::before{
+                padding: 0 !important;
+            }
+            &::after{
+                right: inherit !important;
+            }
+        }
+    }
+
+    &-footer{
+        bottom: 0;
+    }
+
+}

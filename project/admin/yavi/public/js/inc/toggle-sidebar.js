@@ -1,11 +1,11 @@
-const { socket, events } = require("./_info");
-const container = $(".container");
+const { socket, events, $doc } = require("../lib");
+const container = $(document.querySelector(".container"));
 
 /**
  * Ẩn/hiện sidebar
  */
 $(".toggle-sidebar").click(function () {
-    $(".container").toggleClass("show-bar");
+    container.toggleClass("show-bar");
 });
 
 events.on("spa", function (uri) {
@@ -22,7 +22,7 @@ events.on("spa", function (uri) {
 /**
  * Chạy single page
  */
-$(document).on("click", ".spa", function (e) {
+$doc.on("click", ".spa", function (e) {
 
     let $this = $(this);
 

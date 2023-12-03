@@ -1,0 +1,19 @@
+<div class="select">
+    <label for="{{name}}" class="relative">
+        <ul class="absolute{{ this.reverse ? ' reverse' : '' }}">
+            {{ if(this.label){ }}
+            <li class="relative">
+                <input class="absolute full" type="radio" name="{{name}}" checked>
+                <span data-text="{{ label }}">{{ label }}</span>
+            </li>
+            {{ } }}
+
+            {{ for(let i in options){ }}
+            <li class="relative">
+                <input class="select-item absolute full" type="radio" name="{{name}}" value="{{i}}">
+                <span data-text="{{options[i]}}">{{options[i]}}</span>
+            </li>
+            {{ } }}
+        </ul>
+    </label>
+</div>

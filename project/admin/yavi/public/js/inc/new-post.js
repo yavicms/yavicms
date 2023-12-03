@@ -1,6 +1,5 @@
 const { loop } = Yavi;
-const { socket } = require("./_info");
-const $doc = $(document);
+const { socket, $doc } = require("../lib");
 
 $doc.on("submit", "#form-new-post", function (e) {
 

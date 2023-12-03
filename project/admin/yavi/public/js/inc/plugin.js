@@ -1,7 +1,6 @@
-const { socket, events } = require("./_info");
+const { socket, reload, $doc } = require("../lib");
 const { loop } = Yavi;
 
-const $doc = $(document);
 const modal_delete = Modal({
     title: "Xóa plugin",
     content: "Bạn có chắc muốn xóa plugin này không ?",
@@ -19,9 +18,6 @@ const modal_delete = Modal({
         delete modal_delete.info;
     }
 });
-function load_done() {
-    events.emit("spa", document.location.href);
-};
 
 function plugin_active(label, message, type, active) {
 
@@ -30,7 +26,7 @@ function plugin_active(label, message, type, active) {
     data.action = active ? "active" : "deactive";
     data.name = label.parent(".plugin-info").findOne(".plugin-name").value;
 
-    socket.api("post", "plugin-action", data).then(load_done);
+    socket.api("post", "plugin-action", data).then(reload);
 };
 
 const modal_action = {
@@ -56,16 +52,9 @@ const modal_action = {
             if (input.checked) name.push(input.value);
         });
 
-        socket.api("post", "plugin-action", { action: "save", name }).then(load_done);
+        socket.api("post", "plugin-action", { action: "save", name }).then(reload);
     }
 };
-
-/**
- * Click vào checkbox
- */
-$doc.on("click", ".checkable", function (e) {
-    this.prev.click();
-});
 
 $doc.on("click", ".plugin-action-link", function (e) {
 
@@ -89,7 +78,7 @@ $doc.on("click", "button.theme-link", function () {
 
     switch (data.action) {
         case "active":
-            socket.post("plugin-action", data, load_done);
+            socket.post("plugin-action", data, reload);
             break;
     }
 

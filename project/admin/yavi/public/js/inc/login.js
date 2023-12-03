@@ -1,4 +1,4 @@
-const { socket } = require("./_info");
+const { socket } = require("../lib");
 
 $("#loginForm").on("submit", function (e) {
     e.preventDefault();

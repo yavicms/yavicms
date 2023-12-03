@@ -1,9 +1,6 @@
-.app{
-  overflow: hidden;
-}
-.container {
-  flex: 1;
-  display: flex;
-  min-width: 100vh;
-  height: 100vh;
+.app,.container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }

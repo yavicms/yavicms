@@ -1,0 +1,19 @@
+@mixin display($w) {
+    $name: if($w == 0, "", "-" + $w);
+
+    .show#{$name} {
+        display: math;
+    }
+  
+    .inline#{$name} {
+        display: inline;
+    }
+  
+    .block#{$name} {
+        display: block;
+    }
+  
+    .hide#{$name} {
+        display: none;
+    }
+}

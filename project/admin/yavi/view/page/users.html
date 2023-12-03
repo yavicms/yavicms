@@ -1,0 +1,15 @@
+<div id="users">
+    <h4>Users</h4>
+    <div>
+        <span>All</span>
+        <span>Admin</span>
+        <span>Users</span>
+    </div>
+    <div>
+        <div>Action</div>
+        <div id="users-list" class="flex two-1000 three-1300 four-1600">
+            {{ map(list, (u) => view("list.user", { u })) }}
+        </div>
+        <div>Action</div>
+    </div>
+</div>

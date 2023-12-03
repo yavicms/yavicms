@@ -25,7 +25,7 @@ module.exports = function (app) {
         },
 
         {
-            "name": "plugin",
+            "name": "plugins",
             "title": "Plugins",
             "url": "/admin/plugin",
             "icon": "🧩"

@@ -1,0 +1,6 @@
+@import "../funtions/display";
+
+@media (min-width: 1000px) {
+    @include display(1000);
+    @import "../user/1000";
+}

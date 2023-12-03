@@ -12,7 +12,7 @@
         <div class="container {{ page() }}">
             {{ isspa() ? null : content("admin:sidebar") }}
             <div class="main">
-                {{ content("admin:page:" + page()) }}
+                {{ content("admin:content:" + page()) }}
             </div>
         </div>
     </div>

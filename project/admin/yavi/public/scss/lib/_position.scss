@@ -1,0 +1,54 @@
+.relative{
+    position: relative;
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.absolute {
+    position: absolute;
+
+    &.full {
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+.fixed {
+    position: fixed;
+}
+.absolute.center{
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.hover-show, .opacity {
+    display: none !important;
+}
+.relative > .opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 30%;
+}
+.hover:hover {
+    .opacity, .hover-show {
+        display: block !important;
+    }
+    .hover-show {
+        z-index: 2;
+        &.center {
+            display: flex !important;
+        }
+    }
+    .hover-hide {
+        display: none;
+    }
+}

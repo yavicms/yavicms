@@ -1,0 +1,5 @@
+@import "../funtions/display";
+
+@media (min-width: 600px) {
+    @include display(600);
+}

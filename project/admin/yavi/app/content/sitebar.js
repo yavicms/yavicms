@@ -1,4 +1,4 @@
-module.exports = function generateMenuHtml(menuData) {
+function sitebarMenu(menuData) {
     let html = '<ul class="sidebar-folder">', css = "<style>";
 
     menuData.forEach(row => {
@@ -11,7 +11,7 @@ module.exports = function generateMenuHtml(menuData) {
                     </a>`;
 
         if (row.children && row.children.length > 0) {
-            html += generateMenuHtml(row.children);
+            html += sitebarMenu(row.children);
         }
 
         html += '</li>';
@@ -22,4 +22,12 @@ module.exports = function generateMenuHtml(menuData) {
 
     html += `</ul>${css}</style>`;
     return html;
+}
+
+module.exports = function (app) {
+
+    app.content("admin:sidebar", (req) =>
+        app.view("hook.sidebar", req, {
+            sidebar: sitebarMenu(app.get_menu("admin:sidebar"))
+        }));
 }

@@ -1,0 +1,15 @@
+.sidebar {
+    width: 220px;
+    height: 100%;
+
+    &>.sidebar-fixed{
+        display: flex !important;
+    }
+    &>.sidebar-content{
+        display: block !important;
+    }
+
+    .sidebar-header .notify::after{
+        right: 0 !important;
+    }
+}

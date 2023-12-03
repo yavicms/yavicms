@@ -1,0 +1,39 @@
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+
+.input, .textarea {
+    line-height: 1.5;
+    margin: 0;
+    padding: 0.3em 0.6em;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 0.2em;
+    transition: all .3s;
+    width: 100%;
+    cursor: auto;
+    
+    &:focus {
+        border: 1px solid #0074d9;
+        outline: 0;
+    }
+
+    &:empty::before {
+        content: attr(placeholder);
+        color: #888;
+    }
+}
+.textarea {
+    min-height: 5em;
+    max-height: 15em;
+    overflow: auto;
+}
+.input {
+    height: 2.1em;
+}

@@ -1,0 +1,8 @@
+@import "../funtions/display";
+
+@media (min-width: 700px) {
+    @include display(700);
+    
+    @import "../sidebar/700";
+    @import "../main/700";
+}

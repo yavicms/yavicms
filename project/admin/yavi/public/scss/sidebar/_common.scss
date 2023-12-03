@@ -1,0 +1,62 @@
+.sidebar {
+    width: 100%;
+    background-color: #f4f4f4;
+    font-size: 0.92em;
+    transition: width 0.3s ease;
+    position: fixed;
+    z-index: 1;
+
+    &> div {
+        position: absolute;
+        width: 100%;
+
+        &.sidebar-content,&.sidebar-footer{
+            display: none;
+        }
+    }
+
+    .spa {
+        padding: 5px;
+        width: 100%;
+        white-space: nowrap; /* Ngăn chữ xuống dòng */
+        overflow: hidden; /* Ẩn phần chữ vượt quá kích thước của phần tử */
+        text-overflow: ellipsis; /* Hiển thị dấu chấm (...) khi chữ bị ẩn */
+        max-width: 100%;
+        display: block;
+        position: relative;
+
+        &::before {
+            content: attr(data-icon);
+            padding-right: 8px;
+        }
+
+        &[data-count]::after{
+            content: attr(data-count);
+            position: absolute;
+            font-size: 0.9em;
+            top: 5px;
+            right: 0px;
+            color: #e90000;
+            background-color: #fff;
+            border-radius: 50%;
+            min-width: 20px;
+            height: 20px;
+            text-align: center;
+            padding: 2px;
+        }
+        &[data-count="0"]::after{
+            display: none;
+        }
+    }
+}
+
+.show-bar > .sidebar {
+    height: 100%;
+
+    &> .sidebar-fixed {
+        display: flex !important;
+    }
+    &> .sidebar-content{
+        display: block !important;
+    }
+}

@@ -1,0 +1,49 @@
+.sidebar > .sidebar-content {
+    top: 50px;
+    bottom: 50px;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+
+    // Thiết kế thanh scroll
+    &::-webkit-scrollbar {
+        width: 2px; // Chiều rộng của thanh scroll
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #888; // Màu của thanh scroll
+        border-radius: 4px; // Bo góc của thanh scroll
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #eee; // Màu nền của thanh scroll
+    }
+
+    .sidebar-folder {
+        padding: 0;
+        margin-top: 10px;
+
+        &:last-child{
+            margin-bottom: 10px;
+        }
+
+        .sidebar-li {
+            margin: 0.1em 0 !important;
+            padding: 0px 10px;
+            list-style: none;
+          
+            & > .sidebar-folder {
+                margin: 0.1em 0 0.3em 1.3em;
+                display: none;
+            }
+          
+            &:focus > .sidebar-folder {
+                display: block;
+            }
+        }
+    }
+
+    .spa {
+        &:hover {
+            background-color: #fefefe;
+            border-radius: 10px;
+        }
+    }
+}
