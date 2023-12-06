@@ -1,29 +1,24 @@
-const Admin = {}, events = new Yavi.Event();
+const Admin = {}, events = new yavi.Event();
 
-Object.defineProperty(Admin, "$doc", {
-    writable: false,
-    value: $(document)
-});
-
-Object.defineProperty(Admin, "socket", {
-    writable: false,
-    value: WS()
-});
-
-Object.defineProperty(Admin, "events", {
-    writable: false,
-    value: events
-});
-
-Object.defineProperty(Admin, "reload", {
-    writable: false,
-    value() {
-        events.emit("spa", document.location.href);
+Object.defineProperties(Admin, {
+    "$doc": {
+        writable: false,
+        value: $(document)
+    },
+    "socket": {
+        writable: false,
+        value: WS()
+    },
+    "events": {
+        writable: false,
+        value: events
+    },
+    "reload": {
+        writable: false,
+        value() {
+            events.emit("spa", document.location.href);
+        }
     }
 });
-
-window.onpopstate = function (e) {
-    events.emit("spa", document.location);
-};
 
 module.exports = Admin;

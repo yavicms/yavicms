@@ -7,6 +7,18 @@
 .text-left {
     text-align: left;
 }
+.text-upper{
+    text-transform: capitalize;
+}
+.text-lower{
+    text-transform: lowercase;
+}
+.nowrap{
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
+    display: block;
+}
 
 .input, .textarea {
     line-height: 1.5;
@@ -34,6 +46,31 @@
     max-height: 15em;
     overflow: auto;
 }
+.button.link {
+    background-color: white;
+    color: #000;
+    border: 1px solid;
+    padding: 0.1em 0.5em;
+}
 .input {
     height: 2.1em;
+}
+.input-group {
+    display: flex;
+    border: 1px solid #aaa;
+    border-radius: 0.2em;
+
+    &>*{
+        display: block;
+        border: none;
+    }
+
+    .input{
+        border-radius: 0.2em 0em 0em 0.2em;
+    }
+    .button{
+        margin: 0;
+        width: 20%;
+        border-radius: 0em 0.2em 0.2em 0em;
+    }
 }

@@ -3,6 +3,7 @@
     bottom: 50px;
     height: calc(100% - 100px);
     overflow-y: auto;
+    text-align: left; 
 
     // Thiết kế thanh scroll
     &::-webkit-scrollbar {

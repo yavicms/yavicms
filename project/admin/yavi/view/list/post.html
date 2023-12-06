@@ -1,25 +1,23 @@
-{{ var m = array_to_object(p.props); }}
-{{ var u = p.user[0]; }}
+{{
+var m = array_to_object(p.props),
+u = p.user[0],
+id = p._id;
+}}
 
-<tr>
-    <td class="checkbox mp0">
-        <label for="checkbox" class="relative block full h100">
-            <input class="check-item absolute full" type="checkbox" name="checkbox" value="{{p._id}}">
-            <span class="checkable"></span>
-        </label>
-    </td>
-    <td class="title hover">
-        <a href="/admin/post?id={{ p._id }}">{{ p.title }}</a>
-        <div class="action hover-show">
+<tr class="hover">
+    {{ view("lib.page-list-item-checkbox", {id}) }}
+    <td class="title">
+        <a href="post?id={{id}}">{{p.title}}</a>
+        <div class="action hover-show text-upper">
             <a href="#">Edit</a>
             <span></span>
             <a class="delete" href="#">Delete</a>
         </div>
     </td>
     <td class="author">
-        <a href="/admin/user?id={{ u._id }}">{{ u.name.first }} {{ u.name.last }}</a>
+        <a href="user?id={{u._id}}">{{u.name.first}} {{u.name.last}}</a>
     </td>
     <td class="category"></td>
     <td class="tags"></td>
-    <td class="time">{{ timeAgo(p.createdAt) }}</td>
+    <td class="time">{{timeAgo(p.createdAt)}}</td>
 </tr>

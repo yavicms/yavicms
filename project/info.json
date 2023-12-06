@@ -1,12 +1,11 @@
 {
 	"public": {
 		"admin": "yavi",
-		"plugins": [
-			"admin-plugin",
-			"new-post-video"
-		],
+		"plugins": [],
 		"websocket": true,
-		"dev": true
+		"dev": true,
+		"jwt_secret": "yavi",
+		"bcrypt": {}
 	},
 	"private": {
 		"server": {

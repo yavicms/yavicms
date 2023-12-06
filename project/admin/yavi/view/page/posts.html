@@ -1,60 +1,34 @@
-{{ var action_data = function(reverse){
-return view("lib.select", {
-reverse,
+{{
+view("lib.page-list", {
+
+action: {
 name: "action",
 label: "Hành động",
 options: {
 "publish": "Xuất bản",
 "drash": "Lưu nháp"
-} });}; }}
+},
+},
 
-<div id="posts">
-    <h3>Tất cả bài viết</h3>
+header: {
+title: "Tất cả bài viết",
+link: {
+href: "/admin/post-new",
+text: "Viết bài mới"
+},
+},
 
-    <div class="options">
-        <a class="spa" href="">Tất cả<span>(0)</span></a>
-        <a class="spa" href="?status=publish">Đã đăng<span>(0)</span></a>
-        <a class="spa" href="?status=dash">Nháp<span>(0)</span></a>
-        <a class="spa" href="?status=trash">Thùng rác<span>(0)</span></a>
-    </div>
+links: [
+{href: "", text: "Tất cả", count: 0},
+{href: "?status=publish", text: "Đã đăng", count: 0},
+{href: "?status=dash", text: "Nháp", count: 0},
+{href: "?status=trash", text: "Thùng rác", count: 0}
+],
 
-    <div class="action">
-        {{ action_data() }}
-    </div>
+table: {
+td: ["Tiêu đề", "Tác giả", "Danh mục", "Thẻ", "Thời gian"],
+list: map(posts, (p) => view("list.post", { p }))
+},
 
-    <table class="list check-parent">
-        <tbody>
-            <tr>
-                <td class="checkbox mp0">
-                    <label for="checkbox" class="relative block full h100">
-                        <input class="checkall check-item absolute full" type="checkbox" name="checkbox" value="all">
-                        <span class="checkable"></span>
-                    </label>
-                </td>
-                <td>Tiêu đề</td>
-                <td>Tác giả</td>
-                <td>Danh mục</td>
-                <td>Thẻ</td>
-                <td>Thời gian</td>
-            </tr>
-            {{ map(posts, (p) => view("list.post", { p })) }}
-            <tr>
-                <td class="checkbox mp0">
-                    <label for="checkbox" class="relative block full h100">
-                        <input class="checkall check-item absolute full" type="checkbox" name="checkbox" value="all">
-                        <span class="checkable"></span>
-                    </label>
-                </td>
-                <td>Tiêu đề</td>
-                <td>Tác giả</td>
-                <td>Danh mục</td>
-                <td>Thẻ</td>
-                <td>Thời gian</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="action" style="margin-top: 10px;">
-        {{ action_data(true) }}
-    </div>
-</div>
+})
+}}

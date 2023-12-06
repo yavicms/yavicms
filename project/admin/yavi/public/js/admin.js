@@ -1,7 +1,9 @@
-require("./lib/checkbox");
-require("./lib/select");
+if (cookie.has("token")) {
 
-require("./inc/toggle-sidebar");
-require("./inc/login");
-require("./inc/plugin");
-require("./inc/new-post"); 
+    require("./lib/window");
+    require("./lib/checkbox");
+    require("./lib/select");
+    require("./inc/toggle-sidebar");
+
+    require("./page");
+}

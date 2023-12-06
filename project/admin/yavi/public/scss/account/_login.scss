@@ -1,38 +1,56 @@
-.container > .login {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+body {
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
+.container {
+  text-align: center;
+}
 
-    label {
-      margin-bottom: 5px;
-    }
+.login {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
 
+  .login-form{
     input {
-      margin-bottom: 10px;
-      padding: 8px;
-    }
-
-    button {
-      background-color: #4caf50;
-      color: white;
+      width: 100%;
       padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #45a049;
-      }
+      box-sizing: border-box;
+    }
+    .field{
+      margin-bottom: 20px;
     }
   }
+}
 
-  .message {
-    margin-top: 10px;
-    color: red;
+.additional-options {
+  margin-top: 20px;
+
+  a {
+    color: #4caf50;
+    text-decoration: none;
+    margin: 0 10px;
   }
+
+  span {
+    color: #999;
+  }
+}
+
+.empty:empty{
+  display: none;
+}
+
+.error{
+  font-size: 0.92em;
+  color: #eb5c5c;
 }

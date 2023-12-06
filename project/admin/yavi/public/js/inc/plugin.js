@@ -1,5 +1,5 @@
 const { socket, reload, $doc } = require("../lib");
-const { loop } = Yavi;
+const { loop } = yavi;
 
 const modal_delete = Modal({
     title: "Xóa plugin",

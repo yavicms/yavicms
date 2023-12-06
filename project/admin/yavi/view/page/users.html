@@ -1,15 +1,33 @@
-<div id="users">
-    <h4>Users</h4>
-    <div>
-        <span>All</span>
-        <span>Admin</span>
-        <span>Users</span>
-    </div>
-    <div>
-        <div>Action</div>
-        <div id="users-list" class="flex two-1000 three-1300 four-1600">
-            {{ map(list, (u) => view("list.user", { u })) }}
-        </div>
-        <div>Action</div>
-    </div>
-</div>
+{{
+view("lib.page-list", {
+
+action: {
+name: "action",
+label: "Hành động",
+options: {
+"publish": "Xuất bản",
+"drash": "Lưu nháp"
+},
+},
+
+header: {
+title: "Users",
+link: {
+href: "user-new",
+text: "Add new"
+},
+},
+
+links: [
+{href: "", text: "Tất cả", count: 0},
+{href: "?role=admin", text: "Admin", count: 0},
+{href: "?role=user", text: "Users", count: 0}
+],
+
+table: {
+td: ["", "Username", "Tên", "Liên hệ", "Loại", "Thời gian"],
+list: map(list, (u) => view("list.user", { u }))
+},
+
+})
+}}

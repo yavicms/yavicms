@@ -1,34 +1,24 @@
-<tr class="plugin-info active-{{ p.active }}">
-    <td>
-        <label">
-            <input type="checkbox" class="plugin-name" name="plugin_name" value="{{ p.name }}" {{ p.active ? 'checked'
-                : '' }} />
-            <span class="checkable"></span>
-            </label>
-    </td>
-    <td>
-        <div class="plugin-title">
-            {{ p.title }}
-        </div>
-        <div class="plugin-description">
-            {{ p.description }}
-        </div>
-        <div class="plugin-author">
+{{
+var id = p.name,
+status = p.active ? "deactive" : "active";
+}}
 
+<tr class="hover active-{{p.active}}">
+    {{ view("lib.page-list-item-checkbox", {id}) }}
+    <td class="title">
+        {{p.title}}
+        <div class="action hover-show text-upper">
+            <a href="plugin-action?action={{status}}&name={{id}}" class="plugin-action">{{ status }}</a>
+            <span></span>
+            <a href="#">Edit</a>
+            <span></span>
+            <a class="delete" href="#">Delete</a>
         </div>
-        <div class="plugin-action">
-            <div>
-                <label for="plugin_action" class="link plugin-active plugin-action-link">
-                    <input type="radio" name="plugin_action" value="{{ p.active ? 'deactive' : 'active' }}">
-                    <span class="plugin-status">{{ p.active ? "Deactive" : "Active" }}</span>
-                </label>
-            </div>
-            <div>
-                <label for="plugin_action" class="link plugin-delete plugin-action-link">
-                    <input type="radio" name="plugin_action" value="delete">
-                    <span>Delete</span>
-                </label>
-            </div>
-        </div>
+    </td>
+    <td class="content">
+        {{ p.description }}
+    </td>
+    <td class="author">
+        {{ p.author.name }}
     </td>
 </tr>

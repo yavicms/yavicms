@@ -1,0 +1,34 @@
+<tr class="plugin-info active-{{ p.active }}">
+    <td>
+        <label">
+            <input type="checkbox" class="plugin-name" name="plugin_name" value="{{ p.name }}" {{ p.active ? 'checked'
+                : '' }} />
+            <span class="checkable"></span>
+            </label>
+    </td>
+    <td>
+        <div class="plugin-title">
+            {{ p.title }}
+        </div>
+        <div class="plugin-description">
+            {{ p.description }}
+        </div>
+        <div class="plugin-author">
+
+        </div>
+        <div class="plugin-action">
+            <div>
+                <label for="plugin_action" class="link plugin-active plugin-action-link">
+                    <input type="radio" name="plugin_action" value="{{ p.active ? 'deactive' : 'active' }}">
+                    <span class="plugin-status">{{ p.active ? "Deactive" : "Active" }}</span>
+                </label>
+            </div>
+            <div>
+                <label for="plugin_action" class="link plugin-delete plugin-action-link">
+                    <input type="radio" name="plugin_action" value="delete">
+                    <span>Delete</span>
+                </label>
+            </div>
+        </div>
+    </td>
+</tr>

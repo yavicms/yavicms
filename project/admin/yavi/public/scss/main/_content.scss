@@ -7,4 +7,105 @@
     padding: 15px;
     background-color: #f9f9f9;
     overflow-x: auto;
+
+    .header {
+        margin-bottom: 0.7em; 
+
+        .button{
+            margin-left: 1em;
+        }
+    }
+
+    .options {
+        margin-bottom: 0.9em;
+        font-size: 0.92em;
+
+        &> a{
+            &:not(:last-child)::after{
+                content: "|";
+                margin: 8px;
+                color: #969696;
+                font-weight: 600;
+            }
+            &>span{
+                color: #999;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    table {
+        background-color: #fff;
+        font-size: 0.96em;
+
+        td{
+            padding-right: 1em;
+        }
+        
+        &, tr{
+            border: 1px solid #ccc;
+        }
+
+        tr{
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+
+        .checkbox{
+            padding-right: 0;
+
+            input{
+                z-index: 1;
+                cursor: pointer;
+            }
+
+            .checkable{
+                &::before,&::after{
+                    left: 0.6em;
+                }
+            }
+        }
+
+        .action{
+            margin-top: 5px;
+        }
+
+        .avatar {
+            padding-right: 0.5em;
+
+            &>img{
+                width: 3.2em;
+                max-height: 3.2em;
+            }
+        }
+
+        .title{
+            min-width: 12em;
+            max-width: 20em;
+
+            &>div{
+                padding-bottom: 0;
+                max-width: calc(100% - 4em);
+            }
+        }
+
+        .action {
+            font-size: 0.9em;
+
+            &>span{
+                position: relative;
+                margin-left: 1.4em;
+
+                &::after{
+                    content: "|";
+                    position: absolute;
+                    font-weight: 600;
+                    color: #969696;
+                    right: 0.6em;
+                    top: -0.3em;
+                }
+            }
+        }
+    }
 }

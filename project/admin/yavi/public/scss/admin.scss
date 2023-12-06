@@ -1,12 +1,11 @@
-@import "./lib/index";
+@import "./lib";
 
-@import "./account/index";
+@import "./account";
 
-@import "./sidebar/index";
-@import "./main/index";
+@import "./sidebar";
+@import "./main";
 
-@import "./plugin/index";
-@import "./post/index";
-@import "./user/index";
+@import "./plugin";
+@import "./post";
 
-@import "./screen/index";
+@import "./screen";

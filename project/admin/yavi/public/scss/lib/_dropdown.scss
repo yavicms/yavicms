@@ -1,0 +1,53 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    &>* {
+        border: 1px solid #000;
+        border-radius: 0.2em;
+    }
+
+    input,
+    &>label {
+        cursor: pointer;
+    }
+
+    & > .hover-show {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        width: max-content;
+        background-color: #fff;
+
+        &>label:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+        }
+    }
+
+    label {
+        color: black;
+        padding: 0.1em 0.5em;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+
+
+    &.reverse {
+        & > .hover-show {
+            flex-direction: column-reverse;
+            bottom: 1.9em;
+            top: auto !important;
+
+            &>label:not(:first-child) {
+                border-top: 1px solid #ccc;
+            }
+        }
+        &:hover > .hover-show {
+            display: flex !important;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-const { loop } = Yavi;
+const { loop } = yavi;
 const { socket, $doc } = require("../lib");
 
 $doc.on("submit", "#form-new-post", function (e) {

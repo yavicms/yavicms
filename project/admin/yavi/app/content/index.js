@@ -4,6 +4,7 @@ const plugins = require('./plugins');
 const users = require('./users');
 const posts = require("./posts");
 const comments = require("./comments");
+const postNew = require("./post-new");
 
 // Tạo phần content cho viewfile: 
 // /project/admin/name/main.html: 
@@ -15,6 +16,11 @@ module.exports = function (app) {
      * Sitebar Menu
      */
     sitebarMenu(app);
+
+    /**
+     * Create New Post
+     */
+    postNew(app);
 
     /**
      * Dashboard

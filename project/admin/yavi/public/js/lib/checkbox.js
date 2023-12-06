@@ -1,4 +1,4 @@
-const { $doc } = require("../lib");
+const { $doc } = require("./index");
 
 /**
  * Set Checked toàn bộ các input[checkbox]

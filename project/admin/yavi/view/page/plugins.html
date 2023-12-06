@@ -1,0 +1,33 @@
+<div id="plugin-link">
+    <div>
+        <a href="/admin/plugin" class="spa">Tất cả</a>
+        <span class="plugin-count">({{ plugin.count_all }})</span>
+    </div>
+    <div>
+        <a href="/admin/plugin?list=active" class="spa">Kích hoạt</a>
+        <span class="plugin-count">({{ plugin.count_active }})</span>
+    </div>
+    <div>
+        <a href="/admin/plugin?list=noactive" class="spa">Không kích hoạt</a>
+        <span class="plugin-count">({{ plugin.count_deactive }})</span>
+    </div>
+</div>
+
+<form id="plugin-form" {{ !plugin.list.length ? 'style="display:none;"' : '' }}>
+    <table>
+        <tbody>
+            <tr class="active-false">
+                <td style="padding: 0.3em; font-weight: bolder; font-size: 1.1em;">
+                    Plugin
+                </td>
+                <td class="relative">
+                    <label for="plugin_action" class="link plugin-action-link plugin-save absolute">
+                        <input type="radio" name="plugin_action" value="save">
+                        <span class="button">Save</span>
+                    </label>
+                </td>
+            </tr>
+            {{ map(plugin.list, (p) => view("list.plugin", { p })) }}
+        </tbody>
+    </table>
+</form>
