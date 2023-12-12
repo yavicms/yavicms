@@ -1,8 +1,8 @@
 
 module.exports = function (app) {
 
-    app.content("admin:content:", function (req) {
+    app.content("get.admin.", function (req) {
 
-        return app.view("page.home", req);
+        return app.view("home", req);
     });
 }

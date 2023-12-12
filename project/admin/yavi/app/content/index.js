@@ -20,12 +20,12 @@ module.exports = function (app) {
     /**
      * Create New Post
      */
-    postNew(app);
+    // postNew(app);
 
     /**
      * Dashboard
      */
-    dashboard(app);
+    // dashboard(app);
 
     /**
      * Plugin/Theme/Admin
@@ -45,5 +45,5 @@ module.exports = function (app) {
     /**
      * Comments
      */
-    comments(app);
+    // comments(app);
 }

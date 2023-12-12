@@ -17,10 +17,9 @@ module.exports = function (app) {
         ]
     }
     */
-    app.content("admin:content:comments", function (req) {
+    app.content("get.admin.comments", function (req) {
 
-        return app.get_data("admin:comments", req)
-            .then((comments) => app.view("page.comments", req, { comments }))
-            .catch(() => app.view("error", req));
+        return app.get_data("admin.comments", req)
+            .then((comments) => app.view("comments", req, { comments }));
     });
 }

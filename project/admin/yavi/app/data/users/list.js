@@ -7,7 +7,7 @@ module.exports = function (app) {
      * Lấy danh sách users
      * info: { limit, page, fields }
      */
-    app.data("admin:users:list", async function (req) {
+    app.data("admin.users.list", async function (req) {
 
         let info = req.query, $limit, $page, conditions = [];
 

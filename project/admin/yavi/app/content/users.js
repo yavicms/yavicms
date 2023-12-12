@@ -17,10 +17,9 @@ module.exports = function (app) {
         ]
     }
     */
-    app.content("admin:content:users", function (req) {
+    app.content("get.admin.users", function (req) {
 
-        return app.get_data("admin:users:list", req)
-            .then((users) => app.view("page.users", req, users))
-            .catch(() => app.view("error", req));
+        return app.get_data("admin.users", req)
+            .then((users) => app.view("users", req, users));
     });
 }

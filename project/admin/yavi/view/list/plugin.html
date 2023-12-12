@@ -1,14 +1,14 @@
-{{
+::
 var id = p.name,
 status = p.active ? "deactive" : "active";
-}}
+::
 
-<tr class="hover active-{{p.active}}">
-    {{ view("lib.page-list-item-checkbox", {id}) }}
+<tr class="hover active-::p.active::">
+    :: view("lib.page-list-item-checkbox", {id}) ::
     <td class="title">
-        {{p.title}}
+        ::p.title::
         <div class="action hover-show text-upper">
-            <a href="plugin-action?action={{status}}&name={{id}}" class="plugin-action">{{ status }}</a>
+            <a href="plugin-action?action=:: status ::&name=:: id ::" class="plugin-action">:: status ::</a>
             <span></span>
             <a href="#">Edit</a>
             <span></span>
@@ -16,9 +16,9 @@ status = p.active ? "deactive" : "active";
         </div>
     </td>
     <td class="content">
-        {{ p.description }}
+        :: p.description ::
     </td>
     <td class="author">
-        {{ p.author.name }}
+        :: p.author.name ::
     </td>
 </tr>

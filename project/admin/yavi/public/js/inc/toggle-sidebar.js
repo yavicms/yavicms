@@ -1,5 +1,6 @@
 const { socket, events, $doc } = require("../lib");
-const container = $(document.querySelector(".container"));
+const container = $(document.getElementById("container"));
+const main = document.getElementById("main");
 
 /**
  * Ẩn/hiện sidebar
@@ -11,9 +12,9 @@ $(".toggle-sidebar").click(function () {
 events.on("spa", function (uri) {
     spa(socket, uri, function (html) {
 
-        let $container = $(html).find(".container");
+        let $container = $(html).find("#container");
 
-        $(".main").html($container.find(".main").html());
+        main.html($container.find("#main").html());
 
         container.attr("class", $container.attr("class"));
     })

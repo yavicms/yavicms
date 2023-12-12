@@ -1,20 +1,20 @@
 <div>
-    <div class="theme-detail hover {{ t.active ? 'active' : '' }}">
+    <div class="theme-detail hover :: t.active ? 'active' : '' ::">
         <article class="relative">
             <span class="opacity"></span>
             <div class="theme-action hover-show">
-                {{ if(t.active){ }}
-                <button class="theme-link" name="{{ t.type }}" value="{{ t.name }}" action="edit">Tùy chỉnh</button>
-                {{ }else{ }}
-                <button class="theme-link" name="{{ t.type }}" value="{{ t.name }}" action="detail">Chi tiết</button>
-                <button class="theme-link" name="{{ t.type }}" value="{{ t.name }}" action="active">Kích hoạt</button>
-                {{ } }}
+                :: if(t.active){ ::
+                <button class="theme-link" name=":: t.type ::" value=":: t.name ::" action="edit">Tùy chỉnh</button>
+                :: }else{ ::
+                <button class="theme-link" name=":: t.type ::" value=":: t.name ::" action="detail">Chi tiết</button>
+                <button class="theme-link" name=":: t.type ::" value=":: t.name ::" action="active">Kích hoạt</button>
+                :: } ::
             </div>
-            <img src="{{ t.screenshot }}" alt="{{ t.title }}" class="w100 h100" loading="lazy">
+            <img src=":: t.screenshot ::" alt=":: t.title ::" class="w100 h100" loading="lazy">
         </article>
         <footer class="relative">
             <span class="opacity"></span>
-            <div>{{ t.name }}</div>
+            <div>:: t.name ::</div>
         </footer>
     </div>
 </div>

@@ -1,0 +1,10 @@
+::
+var inputs = {};
+
+if(!(this.$req.cookies && this.$req.cookies.login))
+inputs.login = "Email hoặc Số điện thoại";
+
+inputs.code = "Mã xác nhận";
+::
+
+:: view("_template", { title: "Nhập mã xác nhận", button: "Gửi", inputs }) ::

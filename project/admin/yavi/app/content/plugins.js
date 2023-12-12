@@ -1,17 +1,15 @@
 module.exports = function (app) {
 
     function controller(req) {
-        return app.get_data("admin:plugins:theme", req)
-            .then((list) => app.view("page.theme", req, { list }))
-            .catch((e) => app.view("error", req));
+        return app.get_data("admin.themes", req)
+            .then((list) => app.view("themes", req, { list }));
     };
 
-    app.content("admin:content:theme", controller);
-    app.content("admin:content:admin", controller);
+    app.content("get.admin.themes", controller);
+    app.content("get.admin.admins", controller);
 
-    app.content("admin:content:plugin", function (req) {
-        return app.get_data("admin:plugins:plugin", req)
-            .then((plugin) => app.view("page.plugin", req, { plugin }))
-            .catch(() => app.view("error", req));
+    app.content("get.admin.plugins", function (req) {
+        return app.get_data("admin.plugins", req)
+            .then((plugin) => app.view("plugins", req, { plugin }));
     });
 }

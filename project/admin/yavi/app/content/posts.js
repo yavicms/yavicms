@@ -17,10 +17,9 @@ module.exports = function (app) {
         ]
     }
     */
-    app.content("admin:content:posts", function (req) {
+    app.content("get.admin.posts", function (req) {
 
-        return app.get_data("admin:posts", req)
-            .then((posts) => app.view("page.posts", req, { posts }))
-            .catch(() => app.view("error", req));
+        return app.get_data("admin.posts", req)
+            .then((posts) => app.view("posts", req, { posts }));
     });
 }

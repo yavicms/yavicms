@@ -1,7 +1,10 @@
 {
 	"public": {
 		"admin": "yavi",
-		"plugins": [],
+		"theme": "yavi",
+		"plugins": [
+			"account"
+		],
 		"websocket": true,
 		"dev": true,
 		"jwt_secret": "yavi",

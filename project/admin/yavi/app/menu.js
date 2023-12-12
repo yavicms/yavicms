@@ -1,7 +1,7 @@
 
 module.exports = function (app) {
 
-    app.menu("admin:sidebar", [
+    app.menu("admin.sidebar", [
 
         {
             "name": "home",
@@ -27,21 +27,21 @@ module.exports = function (app) {
         {
             "name": "plugins",
             "title": "Plugins",
-            "url": "/admin/plugin",
+            "url": "/admin/plugins",
             "icon": "🧩"
         },
 
         {
-            "name": "theme",
-            "title": "Theme",
-            "url": "/admin/theme",
+            "name": "themes",
+            "title": "Themes",
+            "url": "/admin/themes",
             "icon": "🎨"
         },
 
         {
-            "name": "admin",
+            "name": "admins",
             "title": "Admin",
-            "url": "/admin/admin",
+            "url": "/admin/admins",
             "icon": "👑"
         },
 
@@ -53,9 +53,9 @@ module.exports = function (app) {
         },
 
         {
-            "name": "setting",
+            "name": "settings",
             "title": "Setting",
-            "url": "/admin/setting",
+            "url": "/admin/settings",
             "icon": "🛠️"
         }
     ]);

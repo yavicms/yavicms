@@ -1,25 +1,27 @@
-const Hook = require("./app/hook");
-const Data = require("./app/data");
-const Content = require("./app/content");
-const Menu = require("./app/menu");
-
-const router = require('./app/router');
+const hook = require("./app/hook");
+const data = require("./app/data");
+const content = require("./app/content");
+const menu = require("./app/menu");
 
 module.exports = function (app) {
 
-    router(app);
+    /**
+     * 
+     */
+    data(app);
 
     /**
      * 
      */
-    Data(app);
+    hook(app);
 
     /**
      * 
      */
-    Hook(app);
-    Content(app);
+    content(app);
 
-    Menu(app);
-
+    /**
+     * 
+     */
+    menu(app);
 }

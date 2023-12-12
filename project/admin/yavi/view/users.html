@@ -1,0 +1,33 @@
+::
+view("lib.page-list", {
+
+action: {
+name: "action",
+label: "Hành động",
+options: {
+"publish": "Xuất bản",
+"drash": "Lưu nháp"
+}
+},
+
+header: {
+title: "Users",
+link: {
+href: "user-new",
+text: "Add new"
+}
+},
+
+links: [
+{href: "", text: "Tất cả", count: 0},
+{href: "?role=admin", text: "Admin", count: 0},
+{href: "?role=user", text: "Users", count: 0}
+],
+
+table: {
+td: ["", "Username", "Tên", "Liên hệ", "Loại", "Thời gian"],
+list: map(list, (u) => view("list.user", { u }))
+}
+
+})
+::

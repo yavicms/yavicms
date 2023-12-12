@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.block{
+    display: block;
+}
+.text{
+    &.left{
+        text-align: left;
+    }
+    &.right{
+        text-align: right;
+    }
+    &.center{
+        text-align: center;
+    }
+}
+
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+
+    &.left{
+        left: 0;
+    }
+    &.right{
+        right: 0;
+    }
+    &.center{
+        top: 50%;
+        transform: translate(50%,-50%);
+
+        &.left,&.right{
+            transform: translate(0,-50%);
+        }
+    }
+}
+
+.empty:empty {
+    display: none;
+}
+
+.error {
+    font-size: 0.92em;
+    color: #eb5c5c;
+}
+
+.account{
+
+    .container {
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 100%;
+        min-width: 320px;
+    }
+    
+    .header {
+        background-color: #4caf50;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    form {
+        padding: 20px;
+
+        .action {
+            min-height: 3em;
+
+            & > span > *{
+                margin: 0 0.5em;
+            }
+        }
+
+        .group{
+            &:not(:last-child){
+                margin-bottom: 20px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: #555;
+            }
+            
+            input {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .error{
+                margin-top: 5px;
+            }
+        }
+    }
+    
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+            background-color: #45a049;
+        }
+    }
+    
+    form,.footer {
+        a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+    }
+    
+    .footer {
+        padding: 1.1em;
+        text-align: center;
+        background-color: #FDFBF7;
+    }
+}

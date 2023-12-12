@@ -26,8 +26,7 @@ function sitebarMenu(menuData) {
 
 module.exports = function (app) {
 
-    app.content("admin:sidebar", (req) =>
-        app.view("hook.sidebar", req, {
-            sidebar: sitebarMenu(app.get_menu("admin:sidebar"))
-        }));
+    app.data("admin.sidebar", (req) => app.view("hook.sidebar", req, {
+        sidebar: sitebarMenu(app.get_menu("admin.sidebar"))
+    }));
 }

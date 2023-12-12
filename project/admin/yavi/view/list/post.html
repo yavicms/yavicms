@@ -1,13 +1,13 @@
-{{
+::
 var m = array_to_object(p.props),
 u = p.user[0],
 id = p._id;
-}}
+::
 
 <tr class="hover">
-    {{ view("lib.page-list-item-checkbox", {id}) }}
+    :: view("lib.page-list-item-checkbox", {id}) ::
     <td class="title">
-        <a href="post?id={{id}}">{{p.title}}</a>
+        <a href="post?id=::id::">::p.title::</a>
         <div class="action hover-show text-upper">
             <a href="#">Edit</a>
             <span></span>
@@ -15,9 +15,9 @@ id = p._id;
         </div>
     </td>
     <td class="author">
-        <a href="user?id={{u._id}}">{{u.name.first}} {{u.name.last}}</a>
+        <a href="user?id=::u._id::">::u.name.first:: ::u.name.last::</a>
     </td>
     <td class="category"></td>
     <td class="tags"></td>
-    <td class="time">{{timeAgo(p.createdAt)}}</td>
+    <td class="time">::timeAgo(p.createdAt)::</td>
 </tr>

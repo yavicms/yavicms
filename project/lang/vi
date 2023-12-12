@@ -1,0 +1,17 @@
+{
+    "error_login": "Email hoặc số điện thoại không đúng",
+    "error_password": "Mật khẩu không đúng",
+    "error_gender": "Giới tính không hợp lệ",
+    "error_name": "Tên không hợp lệ",
+    "error_code": "Mật mã không đúng",
+    "error_phone": "Số điện thoại không đúng",
+    "error_email": "Email không đúng",
+    "error_username": "Username không đúng",
+    "error_verify": "Tài khoản chưa xác nhận đăng kí",
+    "account_signed": "Tài khoản này đã đăng nhập",
+    "account_exists": "Tài khoản này đã tồn tại",
+    "account_not_exists": "Tài khoản này chưa tồn tại",
+    "let": "Hãy",
+    "confirm": "Xác nhận",
+    "now": "Ngay"
+}

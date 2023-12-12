@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="header">::title::</div>
+    <form id="form-account">
+
+        :: for (var name in inputs) { ::
+        <div class="group">
+            <label for="::name::">::inputs[name]:::</label>
+            <input type="text" id="::name::" class="input" name="::name::" required>
+            <div class="error empty"></div>
+        </div>
+        :: } ::
+
+        <div class="group empty error" id="form-error"></div>
+
+        <div class="group relative action">
+            <span class=":: this.redirect ? 'absolute right center' : 'block text center' ::">
+                <button type="submit" name="button">:: button ::</button>
+            </span>
+            :: if(this.redirect){ ::
+            <span class="absolute left center">
+                <a class="spa" href="/account/:: redirect.name ::">:: redirect.text ::</a>
+            </span>
+            :: } ::
+        </div>
+    </form>
+    :: if(this.register){ ::
+    <div class="footer" style="font-size:1.1em;">
+        Hoặc <a href="/account/register">tạo tài khoản mới</a>
+    </div>
+    :: } ::
+</div>

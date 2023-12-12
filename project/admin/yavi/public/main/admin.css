@@ -305,58 +305,6 @@ a {
   border-radius: 0.2em 0.2em 0em 0em;
 }
 
-body {
-  background-color: #f5f5f5;
-  font-family: "Arial", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.container {
-  text-align: center;
-}
-
-.login {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 40px;
-  max-width: 400px;
-  width: 100%;
-}
-.login .login-form input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
-.login .login-form .field {
-  margin-bottom: 20px;
-}
-
-.additional-options {
-  margin-top: 20px;
-}
-.additional-options a {
-  color: #4caf50;
-  text-decoration: none;
-  margin: 0 10px;
-}
-.additional-options span {
-  color: #999;
-}
-
-.empty:empty {
-  display: none;
-}
-
-.error {
-  font-size: 0.92em;
-  color: #eb5c5c;
-}
-
 .sidebar {
   width: 100%;
   background-color: #f4f4f4;
@@ -485,14 +433,14 @@ body {
   border-radius: 10px;
 }
 
-.app, .container {
+#app, #container {
   position: fixed;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.main {
+#main {
   position: fixed;
   top: 50px;
   bottom: 0;
@@ -502,75 +450,75 @@ body {
   background-color: #f9f9f9;
   overflow-x: auto;
 }
-.main .header {
+#main .header {
   margin-bottom: 0.7em;
 }
-.main .header .button {
+#main .header .button {
   margin-left: 1em;
 }
-.main .options {
+#main .options {
   margin-bottom: 0.9em;
   font-size: 0.92em;
 }
-.main .options > a:not(:last-child)::after {
+#main .options > a:not(:last-child)::after {
   content: "|";
   margin: 8px;
   color: #969696;
   font-weight: 600;
 }
-.main .options > a > span {
+#main .options > a > span {
   color: #999;
   margin-left: 5px;
 }
-.main table {
+#main table {
   background-color: #fff;
   font-size: 0.96em;
 }
-.main table td {
+#main table td {
   padding-right: 1em;
 }
-.main table, .main table tr {
+#main table, #main table tr {
   border: 1px solid #ccc;
 }
-.main table tr:last-child {
+#main table tr:last-child {
   border-bottom: none;
 }
-.main table .checkbox {
+#main table .checkbox {
   padding-right: 0;
 }
-.main table .checkbox input {
+#main table .checkbox input {
   z-index: 1;
   cursor: pointer;
 }
-.main table .checkbox .checkable::before, .main table .checkbox .checkable::after {
+#main table .checkbox .checkable::before, #main table .checkbox .checkable::after {
   left: 0.6em;
 }
-.main table .action {
+#main table .action {
   margin-top: 5px;
 }
-.main table .avatar {
+#main table .avatar {
   padding-right: 0.5em;
 }
-.main table .avatar > img {
+#main table .avatar > img {
   width: 3.2em;
   max-height: 3.2em;
 }
-.main table .title {
+#main table .title {
   min-width: 12em;
   max-width: 20em;
 }
-.main table .title > div {
+#main table .title > div {
   padding-bottom: 0;
   max-width: calc(100% - 4em);
 }
-.main table .action {
+#main table .action {
   font-size: 0.9em;
 }
-.main table .action > span {
+#main table .action > span {
   position: relative;
   margin-left: 1.4em;
 }
-.main table .action > span::after {
+#main table .action > span::after {
   content: "|";
   position: absolute;
   font-weight: 600;
@@ -732,7 +680,7 @@ body {
   .sidebar .sidebar-header .notify::after {
     right: 0 !important;
   }
-  .main {
+  #main {
     top: 0;
     left: 220px;
     width: calc(100% - 220px);
