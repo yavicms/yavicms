@@ -1,0 +1,21 @@
+:: var id = m._id; ::
+
+<tr class="meta hover">
+    :: view("lib.page-list-item-checkbox", {id}) ::
+    <td class="options">
+        <div class="mp0">
+            <button type="button" class="link meta-edit">Sửa</button>
+            <button type="button" class="link none meta-save">Lưu</button>
+            <button type="button" class="link none meta-cancel">Hủy</button>
+            <button type="button" class="link delete meta-delete">Xóa</button>
+        </div>
+        <div class="none">
+            <input type="hidden" name="collection" value="yavi_posts">
+        </div>
+    </td>
+    <td><input class="input text left mp0" type="button" name="title" data-value=":: m.title ::" value=":: m.title ::">
+    </td>
+    <td><input class="input text left mp0" type="button" name="key" data-value=":: m.key ::" value=":: m.key ::"></td>
+    <td><input class="input text left mp0" type="button" name="type" data-value=":: m.type ::" value=":: m.type ::">
+    </td>
+</tr>

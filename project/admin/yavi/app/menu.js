@@ -16,6 +16,13 @@ module.exports = function (app) {
             "url": "/admin/posts",
             "icon": "📄"
         },
+        {
+            "parent": "posts",
+            "name": "post-meta",
+            "title": "Posts",
+            "url": "/admin/post-meta",
+            "icon": "📄"
+        },
 
         {
             "name": "comments",

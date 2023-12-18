@@ -18,8 +18,10 @@ module.exports = function (app) {
     }
     */
     app.content("get.admin.posts", function (req) {
-
         return app.get_data("admin.posts", req)
-            .then((posts) => app.view("posts", req, { posts }));
+            .then((posts) => ({
+                $title: "Posts",
+                $content: app.view("posts", req, { posts })
+            }));
     });
 }

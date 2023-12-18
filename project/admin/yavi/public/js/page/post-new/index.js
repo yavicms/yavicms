@@ -1,3 +1,5 @@
+require("./props");
+
 const submit = require("./submit");
 const slug = require('./slug');
 const propsBox = require('./props-box');
@@ -19,8 +21,8 @@ page("/admin/post-new", function () {
      * Thêm CKeditor và Submit Form
      */
     Promise.all([
-        InlineEditor.create($contentEditor),
-        InlineEditor.create($descriptionEditor),
+        ClassicEditor.create($contentEditor),
+        ClassicEditor.create($descriptionEditor),
         document.getElementById("content").append($contentEditor),
         document.getElementById("description").append($descriptionEditor)
     ])

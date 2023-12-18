@@ -2,7 +2,7 @@
 module.exports = function (app) {
 
     /**
-    users = {
+    comments = {
         count: { },
         list: [
             {
@@ -20,6 +20,9 @@ module.exports = function (app) {
     app.content("get.admin.comments", function (req) {
 
         return app.get_data("admin.comments", req)
-            .then((comments) => app.view("comments", req, { comments }));
+            .then((comments) => ({
+                $title: "Comments",
+                $content: app.view("comments", req, { comments })
+            }));
     });
 }

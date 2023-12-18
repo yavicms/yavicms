@@ -5,6 +5,7 @@ const users = require('./users');
 const posts = require("./posts");
 const comments = require("./comments");
 const postNew = require("./post-new");
+const metas = require("./metas");
 
 // Tạo phần content cho viewfile: 
 // /project/admin/name/main.html: 
@@ -20,7 +21,7 @@ module.exports = function (app) {
     /**
      * Create New Post
      */
-    // postNew(app);
+    postNew(app);
 
     /**
      * Dashboard
@@ -31,6 +32,11 @@ module.exports = function (app) {
      * Plugin/Theme/Admin
      */
     plugins(app);
+
+    /**
+     * Metas
+     */
+    metas(app);
 
     /**
      * Users

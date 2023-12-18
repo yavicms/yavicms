@@ -1,23 +1,25 @@
-.text-right {
-    text-align: right;
-}
-.text-center {
-    text-align: center;
-}
-.text-left {
-    text-align: left;
-}
-.text-upper{
-    text-transform: capitalize;
-}
-.text-lower{
-    text-transform: lowercase;
-}
-.nowrap{
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    overflow: hidden;
-    display: block;
+.text{
+    &.right {
+        text-align: right;
+    }
+    &.center {
+        text-align: center;
+    }
+    &.left {
+        text-align: left;
+    }
+    &.upper{
+        text-transform: capitalize;
+    }
+    &.lower{
+        text-transform: lowercase;
+    }
+    &.nowrap{
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+        overflow: hidden;
+        display: block;
+    }
 }
 
 .input, .textarea {

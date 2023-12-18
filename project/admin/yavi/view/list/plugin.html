@@ -1,7 +1,4 @@
-::
-var id = p.name,
-status = p.active ? "deactive" : "active";
-::
+:: var id = p.name, status = p.active ? "deactive" : "active"; ::
 
 <tr class="hover active-::p.active::">
     :: view("lib.page-list-item-checkbox", {id}) ::

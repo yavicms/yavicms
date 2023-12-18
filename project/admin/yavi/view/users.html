@@ -19,14 +19,14 @@ text: "Add new"
 },
 
 links: [
-{href: "", text: "Tất cả", count: 0},
-{href: "?role=admin", text: "Admin", count: 0},
-{href: "?role=user", text: "Users", count: 0}
+{href: "?", text: "Tất cả", count: users.count.all},
+{href: "?role=admin", text: "Admin", count: users.count.admin},
+{href: "?role=user", text: "Users", count: users.count.user}
 ],
 
 table: {
 td: ["", "Username", "Tên", "Liên hệ", "Loại", "Thời gian"],
-list: map(list, (u) => view("list.user", { u }))
+list: map(users.list, (u) => view("list.user", { u }))
 }
 
 })

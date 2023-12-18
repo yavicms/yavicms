@@ -1,0 +1,73 @@
+<style>
+    .meta .options {
+        width: max-content;
+    }
+
+    .meta .options>.edit>.none {
+        display: inline-block !important;
+    }
+
+    .meta .options>.edit>.meta-edit,
+    .meta .options .none {
+        display: none !important;
+    }
+
+    .meta .checkbox {
+        width: 3em;
+    }
+
+    .meta>td>input {
+        border: 0;
+        background-color: unset;
+        cursor: text;
+    }
+
+    .meta>td>input:focus {
+        border: none !important;
+    }
+
+    .meta>td>input[type="text"] {
+        background-color: white;
+        padding: 0 10px !important;
+    }
+
+    .modal-meta-delete div {
+        color: #888;
+    }
+
+    .modal-meta-delete span {
+        margin: 0.1em 0.5em;
+    }
+</style>
+::
+view("lib.page-list", {
+
+header: {
+title: "Post Metas",
+link: {
+href: "/admin/meta-new",
+text: "Add New"
+}
+},
+
+links: [
+{href: "?", text: "Tất cả"},
+{href: "?type=tag", text: "Tags"},
+{href: "?type=category", text: "Categories"}
+],
+
+action: {
+name: "action",
+label: "Hành động",
+options: {
+"active": "Kích hoạt",
+"deactive": "Hủy kích hoạt"
+}
+},
+
+table: {
+td: ["Hành động", "Tiêu đề", "Từ khóa", "Loại"],
+list: map(list, (m) => view("meta.list.post", { m }))
+}
+})
+::

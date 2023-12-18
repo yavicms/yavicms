@@ -1,17 +1,16 @@
-<div class="hover dropdown select{{ this.reverse ? ' reverse' : '' }}">
+<div class="hover dropdown select:: this.reverse ? ' reverse' : '' ::">
     <label class="arrow">
-        <span data-text="{{ label }}">{{ label }}</span>
+        <span data-text=":: label ::">:: label ::</span>
     </label>
     <div class="hover-show">
         <label class="arrow">
-            <span data-text="{{ label }}">{{ label }}</span>
+            <span data-text=":: label ::">:: label ::</span>
         </label>
-        {{ for(let i in options){ }}
-        <label for="{{name}}" class="relative block full">
-            <input type="radio" name="{{name}}" value="{{i}}" class="select-item absolute full">
-            <span data-text="{{options[i]}}">{{options[i]}}</span>
+        :: for(let i in options){ ::
+        <label for="::name::" class="relative block full">
+            <input type="radio" name="::name::" value="::i::" class="select-item absolute full">
+            <span data-text="::options[i]::">::options[i]::</span>
         </label>
-        {{ } }}
+        :: } ::
     </div>
 </div>
-<button class="button link" style="margin-left: 10px;" type="button">Áp dụng</button>

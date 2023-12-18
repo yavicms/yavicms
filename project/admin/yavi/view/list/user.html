@@ -1,6 +1,5 @@
 ::
-var p = array_to_object(u.props, true),
-s = array_to_object(u.search, true),
+var p = array_to_object(u.login, true),
 id = u._id;
 ::
 
@@ -10,7 +9,7 @@ id = u._id;
         <img src="https://i1.sndcdn.com/artworks-000156946087-lzbdaw-t500x500.jpg" class="mp0 full">
     </td>
     <td class="title">
-        <a href="user?id=::id::" target="_blank" class="nowrap">:: p.username ::</a>
+        <a href="user?id=::id::" target="_blank" class="nowrap">:: u.public.username ::</a>
         <div class="action hover-show text-upper">
             <a href="user-edit?id=::id::" target="_blank">Edit</a>
             <span></span>
@@ -18,7 +17,7 @@ id = u._id;
         </div>
     </td>
     <td class="author">
-        <a href="user?id=::id::" target="_blank">:: s.name ::</a>
+        <a href="user?id=::id::" target="_blank">:: u.public.fullname ::</a>
     </td>
     <td class="content">
         :: if(p.email){ ::
@@ -29,6 +28,6 @@ id = u._id;
         :: } ::
         :: p.phone ::
     </td>
-    <td class="role">:: p.role ::</td>
-    <td class="time">:: timeAgo(u.createdAt) ::</td>
+    <td class="role">:: u.public.role ::</td>
+    <td class="time">:: timeAgo(u.public.createdAt) ::</td>
 </tr>

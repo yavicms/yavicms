@@ -15,16 +15,32 @@ body {
   color: #0074d9;
 }
 
+button.link {
+  background-color: unset;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+.options .link:not(:last-child) {
+  margin-right: 0.5em;
+}
+.options .link:not(:last-child)::after {
+  color: #969696;
+  content: "|";
+  margin-left: 0.5em;
+}
+
 .empty:empty, .empty-child > *:empty {
   display: none;
 }
 
 .m0, .mp0 {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .p0, .mp0 {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .w100 {
@@ -68,27 +84,22 @@ a {
   color: rosybrown;
 }
 
-.text-right {
+.text.right {
   text-align: right;
 }
-
-.text-center {
+.text.center {
   text-align: center;
 }
-
-.text-left {
+.text.left {
   text-align: left;
 }
-
-.text-upper {
+.text.upper {
   text-transform: capitalize;
 }
-
-.text-lower {
+.text.lower {
   text-transform: lowercase;
 }
-
-.nowrap {
+.text.nowrap {
   text-overflow: ellipsis;
   text-wrap: nowrap;
   overflow: hidden;
@@ -460,15 +471,21 @@ a {
   margin-bottom: 0.9em;
   font-size: 0.92em;
 }
-#main .options > a:not(:last-child)::after {
-  content: "|";
-  margin: 8px;
-  color: #969696;
-  font-weight: 600;
+#main .options a:not(:first-child) {
+  margin-left: 0.5em;
 }
-#main .options > a > span {
-  color: #999;
-  margin-left: 5px;
+#main .options a:not(:first-child):before {
+  color: #969696;
+  content: "|";
+  margin-right: 0.5em;
+}
+#main .options a::after {
+  content: attr(data-count);
+  color: #969696;
+  margin-left: 0.3em;
+}
+#main .options a[data-count="()"]::after, #main .options a[data-count=""]::after {
+  display: none;
 }
 #main table {
   background-color: #fff;
@@ -614,14 +631,25 @@ a {
   max-height: none;
   min-height: 60px;
 }
+.post-new .props-list {
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+}
+.post-new .props:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
 .post-new .props > * {
-  padding: 0.25em 0.6em !important;
+  padding: 0.5em 0.6em !important;
 }
 .post-new .props > .arrow {
-  padding-left: 1.6em !important;
+  padding-left: 2em !important;
 }
 .post-new .props > .arrow::before {
-  top: 20%;
+  top: 0.8em;
+  left: 0.9em;
+}
+.post-new .props .show-props-form .hide {
+  display: inline-block;
 }
 
 .show {

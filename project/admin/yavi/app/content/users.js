@@ -18,8 +18,18 @@ module.exports = function (app) {
     }
     */
     app.content("get.admin.users", function (req) {
-
         return app.get_data("admin.users", req)
-            .then((users) => app.view("users", req, users));
+            .then((users) => ({
+                $title: "Users",
+                $content: app.view("users", req, { users })
+            }));
+    });
+
+    app.content("get.admin.user", function (req) {
+        return app.get_data("admin.user", req)
+            .then((user) => ({
+                $title: data.user.public.fullname,
+                $content: app.view("user-detail", req, { user })
+            }));
     });
 }

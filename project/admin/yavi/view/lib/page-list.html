@@ -1,23 +1,28 @@
-{{
+::
 var action_data = function(reverse){
 action.reverse = reverse;
 return view("lib.select", action);
 },
 list_td_title = map(table.td, (t) => `<td>${t}</td>`);
-}}
+::
 
 <div class="header">
-    <h3 class="inline">{{ header.title }}</h3>
-    {{ if(header.link){ }}<a href="{{ header.link.href }}" class="spa button link">{{ header.link.text }}</a>{{ } }}
+    <h3 class="inline">:: header.title ::</h3>
+    :: if(header.link){ ::
+    <a href=":: header.link.href ::" class="spa button link">
+        :: header.link.text ::
+    </a>
+    :: } ::
 </div>
 
 <div class="options">
-    {{ map(links, (s) => `<a class="spa" href="${s.href}">${s.text}<span>(${s.count})</span></a>`) }}
+    :: map(links, (s) => `<a class="spa" href="${s.href}" data-count="(${s.count || ''})">${s.text}</a>`) ::
 </div>
 
 <form action="#">
     <div class="action" style="margin-bottom: 10px;">
-        {{ action_data() }}
+        :: action_data() ::
+        <button class="button link" style="margin-left: 10px;" type="button">Áp dụng</button>
     </div>
 
     <table class="check-parent full">
@@ -29,9 +34,9 @@ list_td_title = map(table.td, (t) => `<td>${t}</td>`);
                         <span class="checkable"></span>
                     </label>
                 </td>
-                {{ list_td_title }}
+                :: list_td_title ::
             </tr>
-            {{ table.list }}
+            :: table.list ::
             <tr>
                 <td class="checkbox mp0">
                     <label for="checkbox" class="relative block full h100">
@@ -39,12 +44,13 @@ list_td_title = map(table.td, (t) => `<td>${t}</td>`);
                         <span class="checkable"></span>
                     </label>
                 </td>
-                {{ list_td_title }}
+                :: list_td_title ::
             </tr>
         </tbody>
     </table>
 
     <div class="action" style="margin-top: 10px;">
-        {{ action_data(true) }}
+        :: action_data(true) ::
+        <button class="button link" style="margin-left: 10px;" type="button">Áp dụng</button>
     </div>
 </form>

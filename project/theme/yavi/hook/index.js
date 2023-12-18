@@ -1,5 +1,7 @@
 
 module.exports = function (app) {
 
-    app.hook("script.all", (req) => app.view("hook.script-all", req));
+    var names = ["script", "account.script", "login.script"];
+
+    app.hook(names, (req) => app.view("hook.script-all", req));
 }

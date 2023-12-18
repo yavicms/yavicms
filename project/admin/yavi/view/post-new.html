@@ -2,8 +2,8 @@
     <h3 style="padding: auto 10px;">Viết bài mới</h3>
 </div>
 
-<form action="#" class="flex one three text-left" id="form-new-post">
-    <div class="left one two-third-1000">
+<form action="#" class="flex one three-1000 text-left" id="form-new-post">
+    <div class="left full two-third-1000">
 
         <div class="field">
             <span>Tiêu đề</span>
@@ -12,10 +12,7 @@
 
         <div class="field">
             <span>Link bài viết</span>
-            <div class="input-group">
-                <input type="text" name="slug" class="input">
-                <input class="button" type="button" value="Tạo" id="create-slug">
-            </div>
+            <input type="text" name="slug" class="input block full" disabled>
         </div>
 
         <div class="field">
@@ -28,34 +25,57 @@
             <div class="textarea editor" id="content"></div>
         </div>
     </div>
-    <div class="right">
-        <div class="card props">
-            <header class="props-box arrow">Đăng bài viết</header>
-            <footer class="hide">
-                <a href="#" class="delete">Chuyển vào thùng rác ?</a>
-                <button>Đăng bài viết</button>
-            </footer>
-        </div>
-        <div class="card props">
-            <header class="props-box arrow">Danh mục</header>
-            <footer class="hide">
-                <a href="#" class="delete">Chuyển vào thùng rác ?</a>
-                <button>Đăng bài viết</button>
-            </footer>
-        </div>
-        <div class="card props">
-            <header class="props-box arrow">Thẻ</header>
-            <footer class="hide">
-                <a href="#" class="delete">Chuyển vào thùng rác ?</a>
-                <button>Đăng bài viết</button>
-            </footer>
-        </div>
-        <div class="card props">
-            <header class="props-box arrow">Các thuộc tính</header>
-            <footer class="hide">
-                <a href="#" class="delete">Chuyển vào thùng rác ?</a>
-                <button>Đăng bài viết</button>
-            </footer>
+    <div class="right one-third-1000">
+        <div class="props-list">
+            <div class="props">
+                <header class="props-box arrow">Đăng bài viết</header>
+                <footer class="hide">
+                    <a href="#" class="delete">Chuyển vào thùng rác ?</a>
+                    <button>Đăng bài viết</button>
+                </footer>
+            </div>
+            :: 
+            var _title = {
+                category: "danh mục",
+                tag: "thẻ",
+                props: "thuộc tính"
+            };
+            for(var meta in _title){
+            ::
+            <div class="props">
+                <header class="props-box arrow">:: _title[meta] ::</header>
+                <footer class="hide">
+                    <div style="margin-bottom: 0.5em;">
+                        ::
+                        var categories = metas[meta] || [];
+                        for(var i = 0, n = categories.length, r; i < n; i++) { 
+                            r = categories[i]; 
+                        :: 
+                            <label class="relative block">
+                                <input type="checkbox" class="absolute full" name="::meta::" value="::r._id::">
+                                <span class="checkable">:: r.title ::</span>
+                            </label>
+                        :: } ::
+                    </div>
+                    <div style="padding: 0.5em 0em;" class="hide full">
+                        <input type="text" data-name="key" placeholder="Key" style="width:6.7em;margin-right:0.1em;">: 
+                        <input type="text" data-name="title" placeholder="Title" style="width:calc(100% - 7.3em);margin-left:0.2em;">
+                        <div class="none">
+                            <input type="hidden" data-name="collection" value="yavi_posts">
+                            <input type="hidden" data-name="type" value="::meta::">
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display:inline-block;width:calc(100% - 4em);">
+                            <a href="#" style="display:block;" class="post-new-show-props">Tạo 1 ::_title[meta]:: mới</a>
+                        </div>
+                        <div style="display:inline-block;width:4em;text-align:right;" class="hide">
+                            <button type="button" class="save-meta-post">Lưu</button>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            :: } ::
         </div>
     </div>
 </form>

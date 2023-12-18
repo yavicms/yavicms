@@ -6,9 +6,9 @@ title: "Plugins",
 },
 
 links: [
-{href: "?", text: "Tất cả", count: plugin.count_all},
-{href: "?list=active", text: "Kích hoạt", count: plugin.count_active},
-{href: "?list=noactive", text: "Không kích hoạt", count: plugin.count_deactive}
+{href: "?", text: "Tất cả", count: plugins.count.all},
+{href: "?list=active", text: "Kích hoạt", count: plugins.count.active},
+{href: "?list=noactive", text: "Không kích hoạt", count: plugins.count.deactive}
 ],
 
 action: {
@@ -22,7 +22,7 @@ options: {
 
 table: {
 td: ["Tên", "Mô tả", "Tác giả"],
-list: map(plugin.list, (p) => view("list.plugin", { p }))
+list: map(plugins.list, (p) => view("list.plugin", { p }))
 }
 })
 ::
