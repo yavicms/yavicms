@@ -1,7 +1,7 @@
 {
   "name": "yavicms",
   "version": "1.0.0",
-  "description": "Hoàng Sa, Trường Sa, và tôi, là của Việt Nam.",
+  "description": "Hoàng Sa và Trường Sa là của Việt Nam.",
   "main": "index.js",
   "scripts": {
     "dev": "node --trace-warnings index.js",
@@ -37,6 +37,6 @@
     "mime-types": "^2.1.35",
     "mongoose": "^7.6.0",
     "ws": "^8.14.2",
-    "yavi": "^1.0.3"
+    "yavi": "^1.0.4"
   }
 }
